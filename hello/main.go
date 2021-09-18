@@ -1,8 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-	fmt.Println("hello world!")
-	select{}
+	go func() {
+		time.Sleep(999 * time.Second)
+	}()
+	go fmt.Println("hello world!")
+	select {}
 }
